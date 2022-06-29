@@ -1,0 +1,13 @@
+.productHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.rating {
+  font-size: 17px;
+}
+
+.iconWrapper {
+  display: flex;
+  gap: 5px;
+}

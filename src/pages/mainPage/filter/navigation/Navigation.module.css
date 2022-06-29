@@ -1,0 +1,12 @@
+.navButtons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.navCount {
+  margin-top: 15px;
+  text-align: center;
+  user-select: none;
+}

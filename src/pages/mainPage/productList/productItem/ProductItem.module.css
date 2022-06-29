@@ -1,0 +1,39 @@
+.card {
+  display: flex;
+  border-radius: 5px;
+  box-shadow: 2.5px 1.3px 6.5px -1px rgba(0, 0, 0, 0.09),
+    20px 10px 52px -1px rgba(0, 0, 0, 0.045);
+  min-width: 257px;
+  width: 100%;
+}
+
+.poster {
+  width: 47%;
+  border-radius: 5px;
+}
+
+.description {
+  overflow: hidden;
+  width: 100%;
+  padding: 17px;
+  display: flex;
+  flex-direction: column;
+}
+
+.descriptionWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 53%;
+}
+
+.name {
+  line-height: 21px;
+}
+
+@media (min-width: 920px) {
+  .card {
+    width: calc(50% - 15px);
+    max-height: 262px;
+    min-height: 262px;
+  }
+}

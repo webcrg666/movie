@@ -1,0 +1,25 @@
+* {
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+/* @media (min-width: 576px) { ... }
+
+
+@media (min-width: 768px) { ... }
+ */
+
+@media (min-width: 1110px) {
+  .container {
+    width: 1110px;
+  }
+}
+
+/* @media (min-width: 1200px) { ... } */
+
+/* @media (min-width: 1400px) { ... } */

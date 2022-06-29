@@ -1,0 +1,21 @@
+.header {
+  height: 55vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(180deg, rgb(0 0 0) 0%, rgba(2, 0, 45, 60%) 100%);
+  color: white;
+}
+
+.headerInner {
+  padding: 40px 0;
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+}
+
+.image {
+  height: 400px;
+  width: 272px;
+}

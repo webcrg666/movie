@@ -1,0 +1,67 @@
+@import '@/style/colors.scss';
+
+.button {
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  padding: 10px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  color: white;
+}
+
+.green {
+  background-color: $green;
+  color: white;
+}
+
+.green:hover {
+  background-color: darken($color: $green, $amount: 2);
+}
+
+.black {
+  background-color: $black;
+  color: white;
+}
+
+.black:hover {
+  background-color: lighten($color: $black, $amount: 10);
+}
+
+.blue {
+  background-color: $blue;
+  color: white;
+}
+
+.blue:hover {
+  background-color: lighten($color: $blue, $amount: 5);
+}
+
+.cardType {
+  border-top: 1px solid #d1d1d1;
+  border-bottom: 1px solid transparent;
+  border-right: 1px solid transparent;
+  border-radius: 0;
+  color: black;
+  text-align: left;
+  align-items: flex-end;
+  margin-top: auto;
+  padding: 15px 20px;
+  border-bottom-right-radius: 5px;
+}
+
+.cardType:hover {
+  background-color: $dirty_white;
+  border-bottom: 1px solid #e2e2e2;
+  border-right: 1px solid #e2e2e2;
+}
+
+.fullwidth {
+  width: 100%;
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: default;
+}
