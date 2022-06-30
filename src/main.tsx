@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { Route, Routes, HashRouter } from 'react-router-dom';
-import App from './app';
+import App from './app2';
 import { Main } from './pages/main';
 import { ProductCard } from './pages/product-card';
 import store from './redux/store';
