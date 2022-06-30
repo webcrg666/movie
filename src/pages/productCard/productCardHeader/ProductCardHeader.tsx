@@ -1,26 +1,33 @@
 import React from 'react';
 import styles from './ProductCardHeader.module.css';
-import { IMAGE_PATH } from '@/settings/imageSettings';
+import { POSTER_URL, BACKDROP_URL } from '@/settings/imageSettings';
 import { Description } from './description';
 import { IMovie } from '@/types';
-
-const imageSize = '300';
 
 function ProductCardHeader({ product }: { product: IMovie }) {
   const {
     poster_path: posterPath,
+    backdrop_path: backdropPath,
     title,
     vote_average: rating,
     overview,
   } = product;
-  const imageUrl = `${IMAGE_PATH}${imageSize}/${posterPath}`;
 
   return (
-    <div className={styles.header}>
-      <div className="container">
-        <div className={styles.headerInner}>
-          <img className={styles.image} src={imageUrl} alt="" />
-          <Description title={title} rating={rating} overview={overview} />
+    <div
+      className={styles.header}
+      style={{ backgroundImage: `url(${BACKDROP_URL + backdropPath})` }}
+    >
+      <div className={styles.overlay}>
+        <div className="container">
+          <div className={styles.headerInner}>
+            <img
+              className={styles.image}
+              src={POSTER_URL + posterPath}
+              alt=""
+            />
+            <Description title={title} rating={rating} overview={overview} />
+          </div>
         </div>
       </div>
     </div>

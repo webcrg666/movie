@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { Route, Routes, HashRouter } from 'react-router-dom';
 import App from './App';
-import { MainPage } from './pages/mainPage';
+import { MainPage } from './pages/main-page';
 import { ProductCard } from './pages/productCard';
 import store from './redux/store';
 import './style/index.css';

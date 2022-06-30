@@ -1,8 +1,8 @@
 import React from 'react';
 import './style/App.css';
 import { Outlet } from 'react-router-dom';
-import { Header } from './components/header';
-import { LoginFormModal } from './components/loginFormModal';
+import { Header } from './common/components/header';
+import { LoginFormModal } from './common/components/login-form-modal';
 
 function App() {
   return (
