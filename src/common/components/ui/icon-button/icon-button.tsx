@@ -27,23 +27,17 @@ function IconButton({
     [styles.disabled]: disabled,
   });
 
-  const createdStyle = {
-    height,
-    width,
-    backgroundImage: `url(${image})`,
-    backgroundSize: `${height} ${width}`,
-  };
-
   return (
-    <button
-      type="button"
-      className={buttonStyles}
-      style={createdStyle}
-      onClick={onClick}
-      aria-label={label}
-      data-id={dataId}
-      data-button-name={dataName}
-    />
+    <button type="button" className={buttonStyles} onClick={onClick}>
+      <img
+        src={image}
+        alt=""
+        aria-label={label}
+        data-id={dataId}
+        data-button-name={dataName}
+        style={{ height, width }}
+      />
+    </button>
   );
 }
 
