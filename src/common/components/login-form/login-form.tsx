@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import styles from './login-form.module.css';
+import styles from './login-form.module.scss';
 import { login, setLoginModal } from '@/redux/actions';
 
 function LoginForm() {

@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from './product-card-header.module.css';
-import { POSTER_URL, BACKDROP_URL } from '@/settings/imageSettings';
+import styles from './product-card-header.module.scss';
+import { POSTER_URL, BACKDROP_URL } from '@/settings/image';
 import { Description } from './description';
 import { IMovie } from '@/interfaces';
 

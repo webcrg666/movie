@@ -1,4 +1,4 @@
-import { SET_LOGIN_MODAL } from '../actionNames';
+import { SET_LOGIN_MODAL } from '../action-names';
 
 const initialState = {
   loginModalActive: false,

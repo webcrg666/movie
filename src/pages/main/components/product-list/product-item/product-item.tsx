@@ -1,10 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import styles from './product-item.module.css';
+import styles from './product-item.module.scss';
 import { ProductHeader } from './product-header';
 import { Button } from '@/common/components/ui/button';
 import { IMovie } from '@/interfaces';
-import { IMAGE_PATH } from '@/settings/imageSettings';
+import { IMAGE_PATH } from '@/settings/image';
 
 const imageSize = '300';
 

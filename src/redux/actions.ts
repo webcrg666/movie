@@ -14,7 +14,7 @@ import {
   LOGOUT,
   TOGGLE_STARRED,
   TOGGLE_BOOKMARKS,
-} from './actionNames';
+} from './action-names';
 import {
   IMovie,
   IcheckBoxClickAction,

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import styles from './checkbox-group.module.css';
+import styles from './checkbox-group.module.scss';
 
 interface ICheckboxGroupProps {
   name: string;

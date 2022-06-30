@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Modal } from '@/common/components/ui/modal/Modal';
+import { Modal } from '@/common/components/ui/modal';
 import { LoginForm } from '@/common/components/login-form';
 import { getLoginModalActive } from '@/redux/selectors';
 import { setLoginModal } from '@/redux/actions';

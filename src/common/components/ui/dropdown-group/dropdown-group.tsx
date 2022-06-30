@@ -1,5 +1,5 @@
 import React from 'react';
-import { DropdownTitle } from '@/common/components/ui/dropdownTitle';
+import { DropdownTitle } from '@/common/components/ui/dropdown-title';
 import { Dropdown } from '@/common/components/ui/dropdown';
 import { IoptionsParam } from '@/interfaces';
 

@@ -1,5 +1,5 @@
 import { createStore } from 'redux';
-import rootReducer from './rootReducer';
+import rootReducer from './root-reducer';
 
 function saveToLocalStorage(state: any) {
   try {

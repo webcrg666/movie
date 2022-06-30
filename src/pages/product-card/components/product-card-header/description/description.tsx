@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './description.module.css';
+import styles from './description.module.scss';
 
 interface IDescriptionProps {
   title: string;

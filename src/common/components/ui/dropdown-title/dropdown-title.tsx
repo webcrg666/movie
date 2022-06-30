@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './DropdownTitle.module.css';
+import classes from './dropdown-title.module.scss';
 
 function DropdownTitle({ text }: { text: string }) {
   return <p className={classes.title}>{text}</p>;

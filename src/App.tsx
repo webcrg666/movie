@@ -1,5 +1,5 @@
 import React from 'react';
-import './style/App.css';
+import './style/App.scss';
 import { Outlet } from 'react-router-dom';
 import { Header } from './common/components/header';
 import { LoginFormModal } from './common/components/login-form-modal';

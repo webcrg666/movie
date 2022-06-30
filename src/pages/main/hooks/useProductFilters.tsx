@@ -6,8 +6,8 @@ import {
   getStarredList,
   getUserRole,
 } from '@/redux/selectors';
-import productSort from '@/pages/main/helpers/productSort';
-import productFilter from '@/pages/main/helpers/productFilter';
+import productSort from '@/pages/main/helpers/product-sort';
+import productFilter from '@/pages/main/helpers/product-filter';
 
 function useProductFilters() {
   const userRole = useSelector(getUserRole);

@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import classNames from 'classnames';
-import styles from './Modal.module.css';
+import styles from './modal.module.scss';
 
 interface IModalProps {
   active: boolean;

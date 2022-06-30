@@ -1,9 +1,9 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import styles from './Filter.module.css';
+import styles from './filter.module.scss';
 import { Button } from '@/common/components/ui/button';
-import { DropdownGroup } from '@/common/components/ui/dropdownGroup';
-import { CheckboxList } from './checkboxList';
+import { DropdownGroup } from '@/common/components/ui/dropdown-group';
+import { CheckboxList } from './checkbox-list';
 import { Navigation } from './navigation';
 import {
   getCheckboxes,

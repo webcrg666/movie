@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './product-list.module.css';
+import styles from './product-list.module.scss';
 import { ProductItem } from './product-item';
 import useSliceOfProducts from '@/pages/main/hooks/useSliceOfProducts';
 import { IMovie } from '@/interfaces';

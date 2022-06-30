@@ -1,4 +1,4 @@
-import { TOGGLE_STARRED, TOGGLE_BOOKMARKS } from '../actionNames';
+import { TOGGLE_STARRED, TOGGLE_BOOKMARKS } from '../action-names';
 
 const initialState = {
   starred: [],

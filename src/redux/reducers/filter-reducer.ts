@@ -4,7 +4,7 @@ import {
   CHANGE_USER_FILTER_DROPDOWN,
   TOGGLE_FILTER_CHECKBOX,
   RESET_FILTERS,
-} from '../actionNames';
+} from '../action-names';
 import {
   DEFAULT_SORT_BY,
   DEFAULT_SORT_TYPE,
@@ -12,7 +12,7 @@ import {
   DEFAULT_USER_FILTER_VALUE,
   DROPDOWN_SETTINGS,
   CHECKBOXES,
-} from '@/settings/filterSettings';
+} from '@/settings/filter';
 
 const initialState = {
   sortBy: DEFAULT_SORT_BY,

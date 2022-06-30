@@ -4,7 +4,7 @@ import {
   SET_FIRST_PAGE,
   SET_NEXT_PAGE,
   SET_PREV_PAGE,
-} from '../actionNames';
+} from '../action-names';
 import moviesList from '@/movies-list';
 
 const initialState = {

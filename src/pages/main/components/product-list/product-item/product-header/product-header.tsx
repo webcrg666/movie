@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styles from './product-header.module.css';
-import { IconButton } from '@/common/components/ui/iconButton';
+import { IconButton } from '@/common/components/ui/icon-button';
 import star from '@/assets/svg/star.svg';
 import bookmark from '@/assets/svg/bookmark.svg';
 import starActive from '@/assets/svg/star-active.svg';

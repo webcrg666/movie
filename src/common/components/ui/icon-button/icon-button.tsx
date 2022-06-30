@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import styles from './IconButton.module.css';
+import styles from './icon-button.module.scss';
 
 interface IButtonProps {
   image: string;

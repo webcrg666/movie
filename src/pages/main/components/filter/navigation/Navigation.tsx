@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button } from '@/common/components/ui/button';
-import styles from './Navigation.module.css';
+import styles from './navigation.module.scss';
 import { setPrevPage, setNextPage } from '@/redux/actions';
 import { getPagesCount, getPageNumber } from '@/redux/selectors';
 

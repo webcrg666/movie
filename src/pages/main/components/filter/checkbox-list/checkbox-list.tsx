@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './CheckboxList.module.css';
+import styles from './checkbox-list.module.scss';
 import { CheckboxGroup } from '@/common/components/ui/checkbox-group';
 
 interface ICheckboxGroup {

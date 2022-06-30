@@ -1,4 +1,4 @@
-import { LOGIN, LOGOUT } from '../actionNames';
+import { LOGIN, LOGOUT } from '../action-names';
 
 const initialState = {
   userRole: 'guest',
