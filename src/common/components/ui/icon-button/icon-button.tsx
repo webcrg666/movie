@@ -8,6 +8,8 @@ interface IButtonProps {
   width: string;
   label: string;
   disabled?: boolean;
+  dataId?: string | number;
+  dataName?: string;
   onClick?: () => void;
 }
 
@@ -17,6 +19,8 @@ function IconButton({
   width,
   label,
   disabled,
+  dataId,
+  dataName,
   onClick,
 }: IButtonProps) {
   const buttonStyles = classNames(styles.button, {
@@ -36,6 +40,8 @@ function IconButton({
       style={createdStyle}
       onClick={onClick}
       aria-label={label}
+      data-id={dataId}
+      data-button-name={dataName}
     />
   );
 }

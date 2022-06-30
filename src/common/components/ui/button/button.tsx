@@ -8,6 +8,8 @@ interface IButtonProps {
   children: ReactNode;
   fullwidth?: boolean;
   disabled?: boolean;
+  dataId?: string | number;
+  dataName?: string;
   onClick?: () => void;
 }
 
@@ -27,6 +29,8 @@ function Button({
   children,
   fullwidth,
   disabled,
+  dataId,
+  dataName,
   onClick,
 }: IButtonProps) {
   const buttonStyles = classNames(
@@ -40,7 +44,13 @@ function Button({
   );
 
   return (
-    <button type="button" className={buttonStyles} onClick={onClick}>
+    <button
+      type="button"
+      className={buttonStyles}
+      onClick={onClick}
+      data-id={dataId}
+      data-button-name={dataName}
+    >
       {children}
     </button>
   );
