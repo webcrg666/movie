@@ -1,11 +1,12 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import styles from './product-header.module.css';
 import { IconButton } from '@/common/components/ui/icon-button';
 import star from '@/assets/svg/star.svg';
 import bookmark from '@/assets/svg/bookmark.svg';
 import starActive from '@/assets/svg/star-active.svg';
 import bookmarkActive from '@/assets/svg/bookmark-active.svg';
+import { setLoginModal, toggleBookmarks, toggleStarred } from '@/redux/actions';
 import {
   getUserRole,
   getStarredList,
@@ -13,10 +14,23 @@ import {
 } from '@/redux/selectors';
 
 function ProductHeader({ rating, id }: { rating: number; id: number }) {
+  const dispatch = useDispatch();
   const userRole = useSelector(getUserRole);
   const starredList = useSelector(getStarredList);
   const bookmarkList = useSelector(getBookmarkList);
   const isGuest = userRole === 'guest';
+
+  const handleGuestClick = () => {
+    dispatch(setLoginModal(true));
+  };
+
+  const handleToggleStarred = () => {
+    dispatch(toggleStarred(id));
+  };
+
+  const handleToggleBookmarks = () => {
+    dispatch(toggleBookmarks(id));
+  };
 
   return (
     <div className={styles.productHeader}>
@@ -27,8 +41,7 @@ function ProductHeader({ rating, id }: { rating: number; id: number }) {
           height="20px"
           width="20px"
           label="добавить в избранное"
-          dataId={id}
-          dataName="toggleStarred"
+          onClick={isGuest ? handleGuestClick : handleToggleStarred}
         />
         <IconButton
           image={
@@ -37,8 +50,7 @@ function ProductHeader({ rating, id }: { rating: number; id: number }) {
           height="20px"
           width="20px"
           label="добавить в закладки"
-          dataId={id}
-          dataName="toggleBookmarks"
+          onClick={isGuest ? handleGuestClick : handleToggleBookmarks}
         />
       </div>
     </div>
