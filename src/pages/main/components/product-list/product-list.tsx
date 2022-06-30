@@ -15,8 +15,14 @@ function ProductList() {
   const userRole = useSelector(getUserRole);
   const isGuest = userRole === 'guest';
 
-  const handleProductsClick = ({ target }: any) => {
-    const { buttonName, id } = target.dataset;
+  const handleProductsClick = (e: React.SyntheticEvent<EventTarget>) => {
+    // if (!(e.target instanceof HTMLButtonElement)) {
+    //   return;
+    // }
+
+    console.log(e);
+
+    const { buttonName, id } = e.target.dataset;
     const isEmptyDataset = !buttonName || !id;
     const isDetailsButton = buttonName === 'details';
     const isToggleStarredButton = buttonName === 'toggleStarred';

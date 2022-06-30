@@ -33,9 +33,9 @@ function IconButton({
         src={image}
         alt=""
         aria-label={label}
+        style={{ height, width }}
         data-id={dataId}
         data-button-name={dataName}
-        style={{ height, width }}
       />
     </button>
   );
