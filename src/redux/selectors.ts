@@ -11,3 +11,4 @@ export const getUserRole = (state: any) => state.auth.userRole;
 export const getLoginModalActive = (state: any) => state.modal.loginModalActive;
 export const getStarredList = (state: any) => state.favorites.starred;
 export const getBookmarkList = (state: any) => state.favorites.bookmarks;
+export const getFavorites = (state: any) => state.favorites;

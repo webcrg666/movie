@@ -20,12 +20,18 @@ export interface IgenreFilterItem {
   type: string;
 }
 
+export interface Ifavorites {
+  starred: number[];
+  bookmarks: number[];
+}
+
 export interface Ifilters {
+  sortBy: string;
+  sortType: string;
   yearFilter: string;
   userFilter: string;
   genre: IgenreFilterItem[];
-  starredList: number[];
-  bookmarkList: number[];
+  favorites: Ifavorites;
 }
 
 export interface IcheckBoxClickAction {

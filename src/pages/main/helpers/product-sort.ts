@@ -1,4 +1,4 @@
-import { IMovie } from '@/interfaces';
+import { IMovie, Ifilters } from '@/interfaces';
 
 function sortByPopularity(products: IMovie[], sortType: string) {
   return products.sort((a: IMovie, b: IMovie) =>
@@ -15,7 +15,7 @@ function sortByVoteAverage(products: IMovie[], sortType: string) {
   );
 }
 
-function productSort(products: IMovie[], sortBy: string, sortType: string) {
+function productSort(products: IMovie[], { sortBy, sortType }: Ifilters) {
   if (sortBy === 'popularity') {
     return sortByPopularity(products, sortType);
   }

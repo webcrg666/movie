@@ -44,8 +44,6 @@ function changeSortDropdown(state: any, action: any) {
 }
 
 function changeFilterDropdown(state: any, action: any, filtertype: string) {
-  console.log(state.dropdownParams);
-
   return {
     ...state,
     [filtertype]: action.name,

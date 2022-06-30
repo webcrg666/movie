@@ -13,20 +13,19 @@ function checkGenre(filter: IgenreFilterItem[], productGenres: number[]) {
   return false;
 }
 
-function checkUserFilter(
-  itemId: number,
-  { userFilter, starredList, bookmarkList }: Ifilters
-) {
+function checkUserFilter(itemId: number, { userFilter, favorites }: Ifilters) {
+  const { starred, bookmarks } = favorites;
+
   if (userFilter === 'Всё') {
     return true;
   }
 
   if (userFilter === 'Избранное') {
-    return starredList.includes(itemId);
+    return starred.includes(itemId);
   }
 
   if (userFilter === 'Посмотреть позже') {
-    return bookmarkList.includes(itemId);
+    return bookmarks.includes(itemId);
   }
 
   return false;
@@ -34,12 +33,14 @@ function checkUserFilter(
 
 function productFilter(
   products: IMovie[],
-  isAuthenticatedUser: boolean,
+  userRole: string,
   filters: Ifilters
 ) {
+  const genreFiltersActive = filters.genre.length;
+  const isAuthenticatedUser = userRole === 'user';
+
   return products.filter((item) => {
     const isRightYear = filters.yearFilter === getYear(item.release_date);
-    const genreFiltersActive = filters.genre.length;
     const isValidByUserFilter = checkUserFilter(item.id, filters);
 
     if (!isRightYear) {
