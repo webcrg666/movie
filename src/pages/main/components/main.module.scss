@@ -1,6 +1,11 @@
 .contentWrapper {
   display: flex;
+  flex-direction: column;
   gap: 30px;
   margin-bottom: 30px;
   margin-top: 50px;
+
+  @media (min-width: 500px) {
+    flex-direction: row;
+  }
 }

@@ -11,7 +11,12 @@
 .headerInner {
   padding: 40px 0;
   display: flex;
+  flex-direction: column;
   gap: 50px;
+
+  @media (min-width: 500px) {
+    flex-direction: row;
+  }
 }
 
 .image {
