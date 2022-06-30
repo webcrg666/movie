@@ -2,8 +2,8 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getProductsSource } from '@/redux/selectors';
-import findProduct from '@/helpers/findProduct';
-import { ProductCardHeader } from './productCardHeader';
+import findProduct from '@/pages/product-card/helpers/findProduct';
+import { ProductCardHeader } from './product-card-header';
 
 function ProductCard() {
   const { productId } = useParams();

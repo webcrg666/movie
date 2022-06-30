@@ -1,4 +1,4 @@
-import { IMovie } from '@/types';
+import { IMovie } from '@/interfaces';
 
 function sortByPopularity(products: IMovie[], sortType: string) {
   return products.sort((a: IMovie, b: IMovie) =>

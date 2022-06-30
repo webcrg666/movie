@@ -20,7 +20,7 @@ import {
   IcheckBoxClickAction,
   IchangeFilterDropdownAction,
   IchangeSortDropdownAction,
-} from '@/types';
+} from '@/interfaces';
 
 export function updateProductListSource(list: IMovie[]) {
   return {

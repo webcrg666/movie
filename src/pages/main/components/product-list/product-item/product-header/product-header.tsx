@@ -2,10 +2,10 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styles from './product-header.module.css';
 import { IconButton } from '@/common/components/ui/iconButton';
-import star from '@/assets/star.svg';
-import bookmark from '@/assets/bookmark.svg';
-import starActive from '@/assets/star-active.svg';
-import bookmarkActive from '@/assets/bookmark-active.svg';
+import star from '@/assets/svg/star.svg';
+import bookmark from '@/assets/svg/bookmark.svg';
+import starActive from '@/assets/svg/star-active.svg';
+import bookmarkActive from '@/assets/svg/bookmark-active.svg';
 import { setLoginModal, toggleBookmarks, toggleStarred } from '@/redux/actions';
 import {
   getUserRole,

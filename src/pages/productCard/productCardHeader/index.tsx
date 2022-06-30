@@ -1,1 +1,0 @@
-export { ProductCardHeader } from './ProductCardHeader';

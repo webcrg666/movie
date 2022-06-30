@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import classNames from 'classnames';
 import styles from './Dropdown.module.css';
-import { IoptionsParam } from '@/types';
+import { IoptionsParam } from '@/interfaces';
 
 interface IDropdown {
   selected: string;

@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './product-list.module.css';
 import { ProductItem } from './product-item';
-import useSliceOfProducts from '@/hooks/useSliceOfProducts';
-import { IMovie } from '@/types';
+import useSliceOfProducts from '@/pages/main/hooks/useSliceOfProducts';
+import { IMovie } from '@/interfaces';
 
 function ProductList() {
   const sliceOfProducts = useSliceOfProducts();

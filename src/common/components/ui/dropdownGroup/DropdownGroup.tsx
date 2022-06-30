@@ -1,7 +1,7 @@
 import React from 'react';
 import { DropdownTitle } from '@/common/components/ui/dropdownTitle';
 import { Dropdown } from '@/common/components/ui/dropdown';
-import { IoptionsParam } from '@/types';
+import { IoptionsParam } from '@/interfaces';
 
 interface IDropdownGroup {
   text: string;

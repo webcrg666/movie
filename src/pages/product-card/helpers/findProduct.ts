@@ -1,4 +1,4 @@
-import { IMovie } from '@/types';
+import { IMovie } from '@/interfaces';
 
 function findProduct(products: IMovie[], id: number) {
   return products.find((item) => item.id === id);

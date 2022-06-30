@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from './ProductCardHeader.module.css';
+import styles from './product-card-header.module.css';
 import { POSTER_URL, BACKDROP_URL } from '@/settings/imageSettings';
 import { Description } from './description';
-import { IMovie } from '@/types';
+import { IMovie } from '@/interfaces';
 
 function ProductCardHeader({ product }: { product: IMovie }) {
   const {

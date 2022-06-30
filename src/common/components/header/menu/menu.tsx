@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Button } from '@/common/components/ui/button';
-import styles from './menu.module.css';
+import styles from './menu.module.scss';
 import { getUserRole } from '@/redux/selectors';
 import { setLoginModal, logout } from '@/redux/actions';
 

@@ -5,7 +5,7 @@ import {
   SET_NEXT_PAGE,
   SET_PREV_PAGE,
 } from '../actionNames';
-import moviesList from '@/moviesList';
+import moviesList from '@/movies-list';
 
 const initialState = {
   productsSource: moviesList,

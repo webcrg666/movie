@@ -1,4 +1,4 @@
-import { IMovie, Ifilters, IgenreFilterItem } from '@/types';
+import { IMovie, Ifilters, IgenreFilterItem } from '@/interfaces';
 
 function getYear(date: string) {
   return date.slice(0, 4);

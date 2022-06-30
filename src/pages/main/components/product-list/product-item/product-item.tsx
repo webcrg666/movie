@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import styles from './product-item.module.css';
 import { ProductHeader } from './product-header';
 import { Button } from '@/common/components/ui/button';
-import { IMovie } from '@/types';
+import { IMovie } from '@/interfaces';
 import { IMAGE_PATH } from '@/settings/imageSettings';
 
 const imageSize = '300';
