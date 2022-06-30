@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './product-item.module.scss';
 import { ProductHeader } from './product-header';
 import { Button } from '@/common/components/ui/button';
@@ -12,6 +13,10 @@ function ProductItem({ movie }: { movie: IMovie }) {
     vote_average: voteAverage,
     poster_path: posterPath,
   } = movie;
+  const navigate = useNavigate();
+  const handleButtonClick = () => {
+    navigate(`/product/${id}`);
+  };
 
   return (
     <div className={styles.card}>
@@ -26,7 +31,7 @@ function ProductItem({ movie }: { movie: IMovie }) {
           <h4 className={styles.name}> {title}</h4>
         </div>
 
-        <Button type="card" fullwidth dataId={id} dataName="details">
+        <Button type="card" fullwidth onClick={handleButtonClick}>
           Подробнее
         </Button>
       </div>
