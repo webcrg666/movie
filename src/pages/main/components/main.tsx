@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Filter } from './filter';
-import styles from './main.module.css';
+import styles from './main.module.scss';
 import { ProductList } from './product-list';
 import useProductFilters from '../hooks/useProductFilters';
 import { updateProductList, setFirstPage } from '@/redux/actions';
