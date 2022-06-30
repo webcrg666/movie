@@ -31,6 +31,7 @@ function IconButton({
     height,
     width,
     backgroundImage: `url(${image})`,
+    backgroundSize: `${height} ${width}`,
   };
 
   return (
