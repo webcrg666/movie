@@ -1,5 +1,4 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
 import styles from './checkbox-group.module.scss';
 
 interface ICheckboxGroupProps {
@@ -9,31 +8,26 @@ interface ICheckboxGroupProps {
   onChange: (arg0: any) => any;
 }
 
-function CheckboxGroup({
-  name,
-  id,
-  checked = false,
-  onChange,
-}: ICheckboxGroupProps) {
-  const dispatch = useDispatch();
+const CheckboxGroup = React.memo(
+  ({ name, id, checked = false, onChange }: ICheckboxGroupProps) => {
+    const handleClick = () => {
+      onChange({ id, name, isChecked: !checked });
+    };
 
-  const handleClick = () => {
-    dispatch(onChange({ id, name, isChecked: !checked }));
-  };
-
-  return (
-    <div>
-      <input
-        type="checkbox"
-        name={name}
-        checked={checked}
-        onChange={handleClick}
-      />
-      <label className={styles.label} htmlFor={name} onClick={handleClick}>
-        {name}
-      </label>
-    </div>
-  );
-}
+    return (
+      <div>
+        <input
+          type="checkbox"
+          name={name}
+          checked={checked}
+          onChange={handleClick}
+        />
+        <label className={styles.label} htmlFor={name} onClick={handleClick}>
+          {name}
+        </label>
+      </div>
+    );
+  }
+);
 
 export { CheckboxGroup };

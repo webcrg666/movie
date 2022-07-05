@@ -77,11 +77,11 @@ function updateGenreFilter(state: any, action: any) {
   let genreFilter = state.genre;
 
   if (action.isChecked) {
-    genreFilter = [...genreFilter, { name: action.id, type: 'genre' }];
+    genreFilter = [...genreFilter, { id: action.id, type: 'genre' }];
   } else {
     genreFilter = genreFilter.filter(
-      (item: { name: string; type: string }) =>
-        item.name !== action.id && item.type !== action.type
+      (item: { id: number; type: string }) =>
+        item.id !== action.id && item.type !== action.type
     );
   }
 

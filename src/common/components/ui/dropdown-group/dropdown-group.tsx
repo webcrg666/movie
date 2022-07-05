@@ -34,4 +34,4 @@ function DropdownGroup({
   );
 }
 
-export { DropdownGroup };
+export default React.memo(DropdownGroup);

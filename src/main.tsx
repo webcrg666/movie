@@ -5,6 +5,7 @@ import { Route, Routes, HashRouter } from 'react-router-dom';
 import App from './app';
 import { Main } from './pages/main';
 import { ProductCard } from './pages/product-card';
+import { Search } from './pages/search';
 import store from './redux/store';
 import './style/index.scss';
 
@@ -16,6 +17,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           <Route path="/" element={<App />}>
             <Route index element={<Main />} />
             <Route path="product/:productId" element={<ProductCard />} />
+            <Route path="search" element={<Search />} />
           </Route>
         </Routes>
       </HashRouter>

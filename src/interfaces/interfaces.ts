@@ -26,12 +26,12 @@ export interface Ifavorites {
 }
 
 export interface Ifilters {
-  sortBy: string;
-  sortType: string;
-  yearFilter: string;
-  userFilter: string;
-  genre: IgenreFilterItem[];
-  favorites: Ifavorites;
+  sortBy?: string;
+  sortType?: string;
+  yearFilter?: string;
+  userFilter?: string;
+  genre?: IgenreFilterItem[];
+  favorites?: Ifavorites;
 }
 
 export interface IcheckBoxClickAction {

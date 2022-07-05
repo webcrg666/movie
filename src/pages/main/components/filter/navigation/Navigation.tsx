@@ -5,7 +5,7 @@ import styles from './navigation.module.scss';
 import { setPrevPage, setNextPage } from '@/redux/actions';
 import { getPagesCount, getPageNumber } from '@/redux/selectors';
 
-function Navigation() {
+const Navigation = React.memo(() => {
   const dispatch = useDispatch();
   const pagesCount = useSelector(getPagesCount);
   const pageNumber = useSelector(getPageNumber);
@@ -49,6 +49,6 @@ function Navigation() {
       </div>
     </>
   );
-}
+});
 
 export { Navigation };

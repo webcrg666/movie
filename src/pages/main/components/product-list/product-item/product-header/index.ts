@@ -1,1 +1,3 @@
-export { ProductHeader } from './product-header';
+import ProductHeader from './product-header';
+
+export { ProductHeader };

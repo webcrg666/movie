@@ -1,1 +1,3 @@
-export { DropdownGroup } from './dropdown-group';
+import DropdownGroup from './dropdown-group';
+
+export { DropdownGroup };

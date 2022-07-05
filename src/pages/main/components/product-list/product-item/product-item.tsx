@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './product-item.module.scss';
 import { ProductHeader } from './product-header';
@@ -14,9 +14,10 @@ function ProductItem({ movie }: { movie: IMovie }) {
     poster_path: posterPath,
   } = movie;
   const navigate = useNavigate();
-  const handleButtonClick = () => {
+
+  const handleButtonClick = useCallback(() => {
     navigate(`/product/${id}`);
-  };
+  }, [id, navigate]);
 
   return (
     <div className={styles.card}>

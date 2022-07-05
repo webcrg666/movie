@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styles from './product-header.module.css';
 import { IconButton } from '@/common/components/ui/icon-button';
@@ -18,19 +18,19 @@ function ProductHeader({ rating, id }: { rating: number; id: number }) {
   const userRole = useSelector(getUserRole);
   const starredList = useSelector(getStarredList);
   const bookmarkList = useSelector(getBookmarkList);
-  const isGuest = userRole === 'guest';
+  const isGuest = useMemo(() => userRole === 'guest', [userRole]);
 
-  const handleGuestClick = () => {
+  const handleGuestClick = useCallback(() => {
     dispatch(setLoginModal(true));
-  };
+  }, [dispatch]);
 
-  const handleToggleStarred = () => {
+  const handleToggleStarred = useCallback(() => {
     dispatch(toggleStarred(id));
-  };
+  }, [dispatch, id]);
 
-  const handleToggleBookmarks = () => {
+  const handleToggleBookmarks = useCallback(() => {
     dispatch(toggleBookmarks(id));
-  };
+  }, [dispatch, id]);
 
   return (
     <div className={styles.productHeader}>
@@ -57,4 +57,4 @@ function ProductHeader({ rating, id }: { rating: number; id: number }) {
   );
 }
 
-export { ProductHeader };
+export default React.memo(ProductHeader);

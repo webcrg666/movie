@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styles from './filter.module.scss';
 import { Button } from '@/common/components/ui/button';
 import { DropdownGroup } from '@/common/components/ui/dropdown-group';
-import { CheckboxList } from './checkbox-list';
+import { CheckboxList } from '../../../../common/components/checkbox-list';
 import { Navigation } from './navigation';
 import {
   getCheckboxes,
@@ -17,6 +17,7 @@ import {
   toggleFilterCheckbox,
   resetFilters,
 } from '@/redux/actions';
+import { IcheckBoxClickAction } from '@/interfaces';
 
 function Filter() {
   const dispatch = useDispatch();
@@ -24,10 +25,21 @@ function Filter() {
   const dropdownParams = useSelector(getDropdownParams);
   const checkboxes = useSelector(getCheckboxes);
 
+  const handleResetButtonClick = React.useCallback(() => {
+    dispatch(resetFilters());
+  }, [dispatch]);
+
+  const handleCheckboxClick = useCallback(
+    (e: IcheckBoxClickAction) => {
+      dispatch(toggleFilterCheckbox(e));
+    },
+    [dispatch]
+  );
+
   return (
     <section className={styles.filter}>
       <p className={styles.headerText}>Фильтры:</p>
-      <Button color="black" fullwidth onClick={() => dispatch(resetFilters())}>
+      <Button color="black" fullwidth onClick={handleResetButtonClick}>
         Сбросить все фильтры
       </Button>
       {userRole === 'user' && (
@@ -59,7 +71,7 @@ function Filter() {
           fullwidth
         />
       </div>
-      <CheckboxList checkboxes={checkboxes} onChange={toggleFilterCheckbox} />
+      <CheckboxList checkboxes={checkboxes} onChange={handleCheckboxClick} />
       <Navigation />
     </section>
   );

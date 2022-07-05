@@ -35,4 +35,4 @@ function IconButton({
   );
 }
 
-export { IconButton };
+export default React.memo(IconButton);

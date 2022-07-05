@@ -56,4 +56,4 @@ function Button({
   );
 }
 
-export { Button };
+export default React.memo(Button);

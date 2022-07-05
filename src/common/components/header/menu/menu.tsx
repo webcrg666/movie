@@ -23,6 +23,9 @@ function Menu() {
       <Link to="/">
         <Button>Home</Button>
       </Link>
+      <Link to="search">
+        <Button>search</Button>
+      </Link>
       {userRole === 'guest' && (
         <Button color="green" onClick={handleLoginButtonClick}>
           Войти
