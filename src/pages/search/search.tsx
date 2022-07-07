@@ -7,14 +7,9 @@ import { Step4 } from './step4';
 
 function Search() {
   const [currentStep, setCurrentStep] = useState(1);
-  const [genres, setGenres] = useState([
-    { id: 99, name: 'документальный', checked: true },
-    { id: 10751, name: 'семейный', checked: true },
-    { id: 27, name: 'ужасы', checked: true },
-    { id: 878, name: 'фантастика', checked: true },
-  ]);
-  const [review, setReview] = useState('low');
-  const [popularity, setPopularity] = useState('low');
+  const [genres, setGenres] = useState([]);
+  const [review, setReview] = useState('');
+  const [popularity, setPopularity] = useState('');
 
   const onNextButtonClick = () => {
     setCurrentStep((prevStep) => prevStep + 1);
@@ -27,25 +22,25 @@ function Search() {
   return (
     <div className="container">
       <div className={styles.quizWrapper}>
-        {currentStep === 1 ? (
+        {currentStep === 1 && (
           <Step1
             genres={genres}
             setGenres={setGenres}
             onNextButtonClick={onNextButtonClick}
           />
-        ) : null}
-        {currentStep === 2 ? (
+        )}
+        {currentStep === 2 && (
           <Step2 setReview={setReview} onNextButtonClick={onNextButtonClick} />
-        ) : null}
-        {currentStep === 3 ? (
+        )}
+        {currentStep === 3 && (
           <Step3
             setPopularity={setPopularity}
             onNextButtonClick={onNextButtonClick}
           />
-        ) : null}
-        {currentStep === 4 ? (
+        )}
+        {currentStep === 4 && (
           <Step4 genres={genres} review={review} popularity={popularity} />
-        ) : null}
+        )}
       </div>
     </div>
   );

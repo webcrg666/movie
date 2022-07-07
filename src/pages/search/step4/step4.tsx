@@ -4,6 +4,7 @@ import { Button } from '@/common/components/ui/button';
 import { filterChain } from '@/common/helpers/product-filter';
 import { getProductsSource } from '@/redux/selectors';
 import { ProductCard } from './product-card';
+import styles from '../quiz-buttons.module.scss';
 
 function Step4({ genres, review, popularity }) {
   const productsSource = useSelector(getProductsSource);
@@ -26,16 +27,23 @@ function Step4({ genres, review, popularity }) {
     }
   };
 
-  console.log(filteredProducts.length, currentProductIndex);
+  console.log(filteredProducts);
 
   return (
     <>
       <div>
         <ProductCard product={filteredProducts[currentProductIndex]} />
       </div>
-      <div>
-        <Button color="green">Подходит</Button>
-        <Button color="black" onClick={onNextButtonClick} disabled={isLastPage}>
+      <div className={styles.buttonWrapper}>
+        <Button color="green" fullwidth>
+          Подходит
+        </Button>
+        <Button
+          color="black"
+          fullwidth
+          onClick={onNextButtonClick}
+          disabled={isLastPage}
+        >
           Следующий
         </Button>
       </div>
