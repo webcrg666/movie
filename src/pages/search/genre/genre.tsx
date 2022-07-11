@@ -1,22 +1,38 @@
-import React, { useCallback, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { CheckboxList } from '@/common/components/checkbox-list';
 import { CHECKBOXES } from '@/settings/filter';
 import { Button } from '@/common/components/ui/button';
-import styles from './step1.module.scss';
+import styles from './genre.module.scss';
+import { IcheckboxItem } from '@/interfaces';
 
-function Step1({ genres, setGenres, onNextButtonClick }) {
-  const [checkboxes, setCheckboxes] = useState(CHECKBOXES);
+interface IGenreProps {
+  genres: IcheckboxItem[];
+  setGenres: (arg0: IcheckboxItem[]) => void;
+  onNextButtonClick: () => void;
+}
 
-  const handleCheckboxChange = useCallback((e) => {
+function Genre({ genres, setGenres, onNextButtonClick }: IGenreProps) {
+  const [checkboxes, setCheckboxes] = useState([...CHECKBOXES]);
+
+  useEffect(
+    () => () => {
+      setCheckboxes((prevCheckboxes) =>
+        prevCheckboxes.map(({ id, name }) => ({ id, name, checked: false }))
+      );
+    },
+    []
+  );
+
+  const handleCheckboxChange = (e: any) => {
     const updatedCheckboxes = checkboxes;
     const checkbox = updatedCheckboxes.find((item) => item.id === e.id);
     checkbox!.checked = e.isChecked;
 
+    console.log('ewt');
+
     setCheckboxes([...updatedCheckboxes]);
     setGenres(updatedCheckboxes.filter((item) => item.checked));
-  }, []);
-
-  console.log();
+  };
 
   return (
     <div>
@@ -39,4 +55,4 @@ function Step1({ genres, setGenres, onNextButtonClick }) {
   );
 }
 
-export { Step1 };
+export { Genre };

@@ -50,6 +50,7 @@ function Button({
       onClick={onClick}
       data-id={dataId}
       data-button-name={dataName}
+      disabled={disabled}
     >
       {children}
     </button>

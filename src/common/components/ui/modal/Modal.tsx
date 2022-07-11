@@ -5,10 +5,12 @@ import styles from './modal.module.scss';
 interface IModalProps {
   active: boolean;
   children: ReactNode;
-  setActive: (arg0: boolean) => void;
+  setStatus: (arg0: boolean) => void;
 }
 
-function Modal({ active, children, setActive }: IModalProps) {
+function Modal({ active, children, setStatus }: IModalProps) {
+  console.log(active);
+
   const modalStyles = classNames(styles.modal, {
     [styles.modalActive]: active,
   });
@@ -17,7 +19,7 @@ function Modal({ active, children, setActive }: IModalProps) {
   });
 
   const handleBackgroundClick = () => {
-    setActive(false);
+    setStatus(false);
   };
 
   const handleContentClick = (e: React.SyntheticEvent) => {

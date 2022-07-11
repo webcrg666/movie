@@ -17,7 +17,7 @@ import {
   toggleFilterCheckbox,
   resetFilters,
 } from '@/redux/actions';
-import { IcheckBoxClickAction } from '@/interfaces';
+import { IcheckboxItem } from '@/interfaces';
 
 function Filter() {
   const dispatch = useDispatch();
@@ -30,7 +30,7 @@ function Filter() {
   }, [dispatch]);
 
   const handleCheckboxClick = useCallback(
-    (e: IcheckBoxClickAction) => {
+    (e: IcheckboxItem) => {
       dispatch(toggleFilterCheckbox(e));
     },
     [dispatch]

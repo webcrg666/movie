@@ -165,3 +165,11 @@ export const CHECKBOXES = [
     checked: false,
   },
 ];
+export const RATING_VARIANTS = {
+  HIGH: 'high',
+  LOW: 'low',
+};
+export const POPULARITY_VARIANTS = {
+  HIGH: 'high',
+  LOW: 'low',
+};

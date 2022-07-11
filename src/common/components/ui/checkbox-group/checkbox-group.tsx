@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import styles from './checkbox-group.module.scss';
 
 interface ICheckboxGroupProps {
@@ -10,9 +10,9 @@ interface ICheckboxGroupProps {
 
 const CheckboxGroup = React.memo(
   ({ name, id, checked = false, onChange }: ICheckboxGroupProps) => {
-    const handleClick = () => {
+    const handleClick = useCallback(() => {
       onChange({ id, name, isChecked: !checked });
-    };
+    }, [checked, id, name, onChange]);
 
     return (
       <div>

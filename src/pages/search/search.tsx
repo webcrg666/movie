@@ -1,45 +1,51 @@
-import React, { useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import styles from './search.module.scss';
-import { Step1 } from './step1';
-import { Step2 } from './step2';
-import { Step3 } from './step3';
-import { Step4 } from './step4';
+import { Genre } from './genre';
+import { Rating } from './rating';
+import { Popularity } from './popularity';
+import { Final } from './final';
+import { IcheckboxItem } from '@/interfaces';
 
 function Search() {
   const [currentStep, setCurrentStep] = useState(1);
-  const [genres, setGenres] = useState([]);
-  const [review, setReview] = useState('');
+  const [genres, setGenres] = useState<IcheckboxItem[]>([]);
+  const [rating, setRating] = useState('');
   const [popularity, setPopularity] = useState('');
 
-  const onNextButtonClick = () => {
+  useEffect(
+    () => () => {
+      setGenres([]);
+      setRating('');
+      setPopularity('');
+    },
+    []
+  );
+
+  const handleNextStep = useCallback(() => {
     setCurrentStep((prevStep) => prevStep + 1);
-  };
-
-  console.log(styles);
-
-  console.log(genres, review, popularity);
+  }, []);
 
   return (
     <div className="container">
       <div className={styles.quizWrapper}>
         {currentStep === 1 && (
-          <Step1
+          <Genre
             genres={genres}
             setGenres={setGenres}
-            onNextButtonClick={onNextButtonClick}
+            onNextButtonClick={handleNextStep}
           />
         )}
         {currentStep === 2 && (
-          <Step2 setReview={setReview} onNextButtonClick={onNextButtonClick} />
+          <Rating setRating={setRating} onNextButtonClick={handleNextStep} />
         )}
         {currentStep === 3 && (
-          <Step3
+          <Popularity
             setPopularity={setPopularity}
-            onNextButtonClick={onNextButtonClick}
+            onNextButtonClick={handleNextStep}
           />
         )}
         {currentStep === 4 && (
-          <Step4 genres={genres} review={review} popularity={popularity} />
+          <Final genres={genres} rating={rating} popularity={popularity} />
         )}
       </div>
     </div>

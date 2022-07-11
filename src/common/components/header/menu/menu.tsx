@@ -1,17 +1,21 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Button } from '@/common/components/ui/button';
 import styles from './menu.module.scss';
 import { getUserRole } from '@/redux/selectors';
-import { setLoginModal, logout } from '@/redux/actions';
+import { logout } from '@/redux/actions';
+import { authModalSlice } from '@/redux/reducers/authModalSlice';
+import { useAppDispatch } from '@/common/hooks/redux';
 
 function Menu() {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const userRole = useSelector(getUserRole);
+  const { setModalStatus } = authModalSlice.actions;
+  console.log(authModalSlice.actions);
 
   const handleLoginButtonClick = () => {
-    dispatch(setLoginModal(true));
+    dispatch(setModalStatus(true));
   };
 
   const handleLogoutButtonClick = () => {

@@ -1,4 +1,5 @@
 import { IMovie, Ifilters, IgenreFilterItem, Ifavorites } from '@/interfaces';
+import { POPULARITY_VARIANTS, RATING_VARIANTS } from '@/settings/filter';
 
 function getYear(date: string) {
   return date.slice(0, 4);
@@ -81,9 +82,10 @@ export function filterChain({
         }
       }
 
-      if (name === 'review') {
-        const isHighReview = item.vote_average >= 5;
-        const isValid = value === 'high' ? isHighReview : !isHighReview;
+      if (name === 'rating') {
+        const isHighRating = item.vote_average >= 5;
+        const isValid =
+          value === RATING_VARIANTS.HIGH ? isHighRating : !isHighRating;
 
         if (!isValid) {
           result = false;
@@ -92,7 +94,8 @@ export function filterChain({
 
       if (name === 'popularity') {
         const isPopular = item.popularity >= 100 && item.vote_count >= 200;
-        const isValid = value === 'high' ? isPopular : !isPopular;
+        const isValid =
+          value === POPULARITY_VARIANTS.HIGH ? isPopular : !isPopular;
 
         if (!isValid) {
           result = false;

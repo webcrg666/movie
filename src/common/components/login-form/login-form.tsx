@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import styles from './login-form.module.scss';
-import { login, setLoginModal } from '@/redux/actions';
+import { login } from '@/redux/actions';
+import { authModalSlice } from '@/redux/reducers/authModalSlice';
 
 function LoginForm() {
   const dispatch = useDispatch();
   const [loginValue, setLoginValue] = useState('');
   const [passwordValue, setPasswordValue] = useState('');
+  const { setModalStatus } = authModalSlice.actions;
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
@@ -15,7 +17,7 @@ function LoginForm() {
 
     if (loginValid && passwordValid) {
       dispatch(login());
-      dispatch(setLoginModal(false));
+      dispatch(setModalStatus(false));
     }
 
     setLoginValue('');

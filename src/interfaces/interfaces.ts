@@ -16,8 +16,7 @@ export interface IMovie {
 }
 
 export interface IgenreFilterItem {
-  name: number;
-  type: string;
+  id: number;
 }
 
 export interface Ifavorites {
@@ -32,12 +31,14 @@ export interface Ifilters {
   userFilter?: string;
   genre?: IgenreFilterItem[];
   favorites?: Ifavorites;
+  rating?: string;
+  popularity?: string;
 }
 
-export interface IcheckBoxClickAction {
+export interface IcheckboxItem {
   id: number;
   name: string;
-  isChecked: boolean;
+  checked: boolean;
 }
 
 export interface IchangeFilterDropdownAction {
@@ -58,4 +59,8 @@ export interface IoptionsParam {
   sortBy: string;
   sortType: string;
   selected: boolean;
+}
+
+export interface IAuthModal {
+  modalActive: boolean;
 }

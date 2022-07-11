@@ -1,31 +1,37 @@
 import React from 'react';
 import { Button } from '@/common/components/ui/button';
+import { RATING_VARIANTS } from '@/settings/filter';
 import styles from '../quiz-buttons.module.scss';
 
-function Step3({ setPopularity, onNextButtonClick }) {
+interface IRatingProps {
+  setRating: (arg0: string) => void;
+  onNextButtonClick: () => void;
+}
+
+function Rating({ setRating, onNextButtonClick }: IRatingProps) {
   const handleLowButtonClick = () => {
-    setPopularity('low');
+    setRating(RATING_VARIANTS.LOW);
     onNextButtonClick();
   };
 
   const handleHighButtonClick = () => {
-    setPopularity('high');
+    setRating(RATING_VARIANTS.HIGH);
     onNextButtonClick();
   };
 
   return (
     <div>
-      <h1>Шаг 3: Этот фильм</h1>
+      <h1>Шаг 2: выберите оценку</h1>
       <div className={styles.buttonWrapper}>
         <Button color="black" fullwidth onClick={handleLowButtonClick}>
-          Неизвестный
+          Низкая
         </Button>
         <Button color="green" fullwidth onClick={handleHighButtonClick}>
-          Популярный
+          Высокая
         </Button>
       </div>
     </div>
   );
 }
 
-export { Step3 };
+export { Rating };

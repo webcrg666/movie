@@ -17,7 +17,7 @@ import {
 } from './action-names';
 import {
   IMovie,
-  IcheckBoxClickAction,
+  IcheckboxItem,
   IchangeFilterDropdownAction,
   IchangeSortDropdownAction,
 } from '@/interfaces';
@@ -87,11 +87,7 @@ export function changeUserFilterDropdown({
     name,
   };
 }
-export function toggleFilterCheckbox({
-  id,
-  name,
-  isChecked,
-}: IcheckBoxClickAction) {
+export function toggleFilterCheckbox({ id, name, isChecked }: IcheckboxItem) {
   return {
     type: TOGGLE_FILTER_CHECKBOX,
     id,
