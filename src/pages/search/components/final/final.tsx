@@ -41,20 +41,34 @@ function Final({ genres, rating, popularity }: IFinalProps) {
     }
   };
 
+  const refreshPage = () => {
+    window.location.reload();
+  };
+
   return (
     <div className={styles.finalStageWrap}>
       <ProductCard product={filteredProducts[currentProductIndex]} />
       <div className={buttonStyles.buttonWrapper}>
-        <Button color="green" onClick={handleButtonClick} fullwidth>
-          Подходит
-        </Button>
-        <Button
-          color="black"
-          fullwidth
-          onClick={onNextButtonClick}
-          disabled={isLastPage}
-        >
-          Следующий
+        {!!filteredProducts.length && (
+          <>
+            <Button color="green" onClick={handleButtonClick} fullwidth>
+              Подходит
+            </Button>
+            <Button
+              color="green"
+              fullwidth
+              onClick={onNextButtonClick}
+              disabled={isLastPage}
+            >
+              Следующий
+            </Button>
+          </>
+        )}
+      </div>
+      <div>
+        <br />
+        <Button color="blue" fullwidth onClick={refreshPage}>
+          Попробовать еще раз
         </Button>
       </div>
     </div>
