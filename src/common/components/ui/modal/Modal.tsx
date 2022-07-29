@@ -9,8 +9,6 @@ interface IModalProps {
 }
 
 function Modal({ active, children, setStatus }: IModalProps) {
-  console.log(active);
-
   const modalStyles = classNames(styles.modal, {
     [styles.modalActive]: active,
   });

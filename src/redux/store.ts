@@ -18,7 +18,7 @@ const rootReducer = combineReducers({
 });
 
 const persistConfig = {
-  key: 'root',
+  key: 'movies',
   storage,
   whitelist: ['auth', 'favorites'],
 };
