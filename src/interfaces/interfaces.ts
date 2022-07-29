@@ -1,6 +1,6 @@
 export interface IMovie {
   adult: boolean;
-  backdrop_path: string;
+  backdrop_path: string | null;
   genre_ids: number[];
   id: number;
   original_language: string;
@@ -56,8 +56,8 @@ export interface IchangeSortDropdownAction {
 export interface IoptionsParam {
   name: string;
   dropdownType: string;
-  sortBy: string;
-  sortType: string;
+  sortBy?: string;
+  sortType?: string;
   selected: boolean;
 }
 

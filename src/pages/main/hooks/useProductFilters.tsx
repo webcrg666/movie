@@ -14,6 +14,8 @@ function useProductFilters() {
   const favorites = useSelector(getFavorites);
   const filters = useSelector(getFilters);
 
+  console.log(filters);
+
   const filteredProducts = filterChain({
     isAuthenticatedUser: userRole === 'user',
     items: productsSource,

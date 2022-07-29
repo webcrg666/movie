@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import styles from './login-form.module.scss';
-import { login } from '@/redux/actions';
 import { authModalSlice } from '@/redux/reducers/authModalSlice';
+import { authSlice } from '@/redux/reducers/authSlice';
 
 function LoginForm() {
   const dispatch = useDispatch();
   const [loginValue, setLoginValue] = useState('');
   const [passwordValue, setPasswordValue] = useState('');
   const { setModalStatus } = authModalSlice.actions;
+  const { login } = authSlice.actions;
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();

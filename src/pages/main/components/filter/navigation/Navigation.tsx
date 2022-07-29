@@ -2,8 +2,8 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button } from '@/common/components/ui/button';
 import styles from './navigation.module.scss';
-import { setPrevPage, setNextPage } from '@/redux/actions';
 import { getPagesCount, getPageNumber } from '@/redux/selectors';
+import { productsSlice } from '@/redux/reducers/productsSlice';
 
 const Navigation = React.memo(() => {
   const dispatch = useDispatch();
@@ -12,6 +12,7 @@ const Navigation = React.memo(() => {
   const isFirstPage = pageNumber === 1;
   const isLastPage = pageNumber >= pagesCount;
   const currentPage = pagesCount > 0 ? pageNumber : 0;
+  const { setPrevPage, setNextPage } = productsSlice.actions;
 
   const handlePrevPageClick = () => {
     if (!isFirstPage) {

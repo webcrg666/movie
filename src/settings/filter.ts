@@ -36,17 +36,17 @@ export const DROPDOWN_SETTINGS = {
   yearFilter: [
     {
       name: '2020',
-      dropdownType: 'filterYear',
+      dropdownType: 'yearFilter',
       selected: true,
     },
     {
       name: '2019',
-      dropdownType: 'filterYear',
+      dropdownType: 'yearFilter',
       selected: false,
     },
     {
       name: '2018',
-      dropdownType: 'filterYear',
+      dropdownType: 'yearFilter',
       selected: false,
     },
   ],

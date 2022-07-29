@@ -10,20 +10,20 @@ import {
   getDropdownParams,
   getUserRole,
 } from '@/redux/selectors';
-import {
-  changeSortDropdown,
-  changeYearFilterDropdown,
-  changeUserFilterDropdown,
-  toggleFilterCheckbox,
-  resetFilters,
-} from '@/redux/actions';
 import { IcheckboxItem } from '@/interfaces';
+import { filterSlice } from '@/redux/reducers/filterSlice';
 
 function Filter() {
   const dispatch = useDispatch();
   const userRole = useSelector(getUserRole);
   const dropdownParams = useSelector(getDropdownParams);
   const checkboxes = useSelector(getCheckboxes);
+  const {
+    changeSortDropdown,
+    changeFilterDropdown,
+    toggleFilterCheckbox,
+    resetFilters,
+  } = filterSlice.actions;
 
   const handleResetButtonClick = React.useCallback(() => {
     dispatch(resetFilters());
@@ -48,7 +48,7 @@ function Filter() {
             text="Показывать:"
             selected=""
             optionsParam={dropdownParams.userFilter}
-            onChange={changeUserFilterDropdown}
+            onChange={changeFilterDropdown}
             fullwidth
           />
         </div>
@@ -67,7 +67,7 @@ function Filter() {
           text="Год релиза:"
           selected="2020"
           optionsParam={dropdownParams.yearFilter}
-          onChange={changeYearFilterDropdown}
+          onChange={changeFilterDropdown}
           fullwidth
         />
       </div>

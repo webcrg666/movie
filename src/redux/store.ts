@@ -2,11 +2,12 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage'; // defaults to localStorage for web
 
-import productsReducer from './reducers/products-reducer';
-import filterReducer from './reducers/filter-reducer';
-import authReducer from './reducers/auth-reducer';
+import filterReducer from './reducers/filterSlice';
+// import authReducer from './reducers/authSlice';
 import favoritesReducer from './reducers/favorites-reducer';
+import productsReducer from './reducers/productsSlice';
 import authModalReducer from './reducers/authModalSlice';
+import authReducer from './reducers/authSlice';
 
 const rootReducer = combineReducers({
   products: productsReducer,

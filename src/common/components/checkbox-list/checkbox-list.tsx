@@ -6,13 +6,13 @@ import { IcheckboxItem } from '@/interfaces';
 
 interface ICheckboxGroup {
   checkboxes: IcheckboxItem[];
-  type: string;
+  type?: string;
   onChange: (arg0: any) => any;
 }
 
 const CheckboxList = React.memo(
   ({ checkboxes, type, onChange }: ICheckboxGroup) => {
-    const combinedClasses = cn(styles.checkboxList, styles[type]);
+    const combinedClasses = cn(styles.checkboxList, styles[type!]);
 
     return (
       <div className={combinedClasses}>
