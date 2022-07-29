@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import styles from './search.module.scss';
 import { Genre } from './genre';
 import { Rating } from './rating';
@@ -11,15 +11,6 @@ function Search() {
   const [genres, setGenres] = useState<IcheckboxItem[]>([]);
   const [rating, setRating] = useState('');
   const [popularity, setPopularity] = useState('');
-
-  useEffect(
-    () => () => {
-      setGenres([]);
-      setRating('');
-      setPopularity('');
-    },
-    []
-  );
 
   const handleNextStep = useCallback(() => {
     setCurrentStep((prevStep) => prevStep + 1);

@@ -11,6 +11,7 @@ const Navigation = React.memo(() => {
   const pageNumber = useSelector(getPageNumber);
   const isFirstPage = pageNumber === 1;
   const isLastPage = pageNumber >= pagesCount;
+  const currentPage = pagesCount > 0 ? pageNumber : 0;
 
   const handlePrevPageClick = () => {
     if (!isFirstPage) {
@@ -45,7 +46,7 @@ const Navigation = React.memo(() => {
         </Button>
       </div>
       <div className={styles.navCount}>
-        {`${pagesCount > 0 ? pageNumber : 0} из ${pagesCount}`}
+        {currentPage} из {pagesCount}
       </div>
     </>
   );

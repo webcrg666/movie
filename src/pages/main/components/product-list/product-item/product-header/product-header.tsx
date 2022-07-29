@@ -23,7 +23,7 @@ function ProductHeader({ rating, id }: { rating: number; id: number }) {
   const isGuest = useMemo(() => userRole === 'guest', [userRole]);
 
   const handleGuestClick = useCallback(() => {
-    dispatch(setModalStatus(true));
+    console.log(dispatch(setModalStatus(true)));
   }, [dispatch, setModalStatus]);
 
   const handleToggleStarred = useCallback(() => {

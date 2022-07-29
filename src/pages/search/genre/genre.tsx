@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { CheckboxList } from '@/common/components/checkbox-list';
 import { CHECKBOXES } from '@/settings/filter';
 import { Button } from '@/common/components/ui/button';
@@ -14,24 +14,17 @@ interface IGenreProps {
 function Genre({ genres, setGenres, onNextButtonClick }: IGenreProps) {
   const [checkboxes, setCheckboxes] = useState([...CHECKBOXES]);
 
-  useEffect(
-    () => () => {
-      setCheckboxes((prevCheckboxes) =>
-        prevCheckboxes.map(({ id, name }) => ({ id, name, checked: false }))
-      );
-    },
-    []
-  );
-
   const handleCheckboxChange = (e: any) => {
-    const updatedCheckboxes = checkboxes;
-    const checkbox = updatedCheckboxes.find((item) => item.id === e.id);
-    checkbox!.checked = e.isChecked;
+    const updatedCheckboxes = checkboxes.map(({ id, name, checked }) => {
+      const isModified = id === e.id;
 
-    console.log('ewt');
+      return { id, name, checked: isModified ? e.isChecked : checked };
+    });
 
-    setCheckboxes([...updatedCheckboxes]);
+    setCheckboxes(updatedCheckboxes);
     setGenres(updatedCheckboxes.filter((item) => item.checked));
+
+    // [...updatedCheckboxes]);
   };
 
   return (

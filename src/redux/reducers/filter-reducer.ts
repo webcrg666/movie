@@ -20,7 +20,7 @@ const initialState = {
   yearFilter: DEFAULT_YEAR_FILTER_VALUE,
   userFilter: DEFAULT_USER_FILTER_VALUE,
   dropdownParams: DROPDOWN_SETTINGS,
-  checkboxes: CHECKBOXES,
+  checkboxes: [...CHECKBOXES],
   genre: [],
 };
 
@@ -63,12 +63,9 @@ function setCheckbox(state: any, action: any) {
   const { checkboxes } = state;
 
   return checkboxes.map(
-    (item: { id: number; type: string; checked: boolean }) => {
-      const newElement = item;
-      if (newElement.id === action.id) {
-        newElement.checked = action.isChecked;
-      }
-      return newElement;
+    ({ id, name, checked }: { id: number; name: string; checked: boolean }) => {
+      const isModified = id === action.id;
+      return { id, name, checked: isModified ? action.isChecked : checked };
     }
   );
 }
