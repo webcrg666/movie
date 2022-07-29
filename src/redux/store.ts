@@ -4,7 +4,7 @@ import storage from 'redux-persist/lib/storage'; // defaults to localStorage for
 
 import filterReducer from './reducers/filterSlice';
 // import authReducer from './reducers/authSlice';
-import favoritesReducer from './reducers/favorites-reducer';
+import favoritesReducer from './reducers/favoritesSlice';
 import productsReducer from './reducers/productsSlice';
 import authModalReducer from './reducers/authModalSlice';
 import authReducer from './reducers/authSlice';

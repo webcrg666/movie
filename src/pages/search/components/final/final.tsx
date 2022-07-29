@@ -23,8 +23,6 @@ function Final({ genres, rating, popularity }: IFinalProps) {
   const isLastPage = filteredProducts.length === currentProductIndex + 1;
 
   const handleButtonClick = useCallback(() => {
-    console.log('test');
-
     navigate(`/product/${filteredProducts[currentProductIndex].id}`);
   }, [currentProductIndex, filteredProducts, navigate]);
 
@@ -42,8 +40,6 @@ function Final({ genres, rating, popularity }: IFinalProps) {
       setCurrentProductIndex((prevIndex) => prevIndex + 1);
     }
   };
-
-  console.log(genres);
 
   return (
     <div className={styles.finalStageWrap}>

@@ -6,13 +6,14 @@ import star from '@/assets/svg/star.svg';
 import bookmark from '@/assets/svg/bookmark.svg';
 import starActive from '@/assets/svg/star-active.svg';
 import bookmarkActive from '@/assets/svg/bookmark-active.svg';
-import { toggleBookmarks, toggleStarred } from '@/redux/actions';
+// import { toggleBookmarks, toggleStarred } from '@/redux/actions';
 import {
   getUserRole,
   getStarredList,
   getBookmarkList,
 } from '@/redux/selectors';
 import { authModalSlice } from '@/redux/reducers/authModalSlice';
+import { favoritesSlice } from '@/redux/reducers/favoritesSlice';
 
 function ProductHeader({ rating, id }: { rating: number; id: number }) {
   const dispatch = useDispatch();
@@ -20,10 +21,11 @@ function ProductHeader({ rating, id }: { rating: number; id: number }) {
   const starredList = useSelector(getStarredList);
   const bookmarkList = useSelector(getBookmarkList);
   const { setModalStatus } = authModalSlice.actions;
+  const { toggleStarred, toggleBookmarks } = favoritesSlice.actions;
   const isGuest = useMemo(() => userRole === 'guest', [userRole]);
 
   const handleGuestClick = useCallback(() => {
-    console.log(dispatch(setModalStatus(true)));
+    dispatch(setModalStatus(true));
   }, [dispatch, setModalStatus]);
 
   const handleToggleStarred = useCallback(() => {
